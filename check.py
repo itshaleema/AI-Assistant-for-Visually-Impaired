@@ -1,9 +1,10 @@
+#Haleema Iftikhar
 import cv2
 import pyttsx3
 import time
 
 engine = pyttsx3.init()
-cap = cv2.VideoCapture("http://192.168.1.4:8080/video")
+cap = cv2.VideoCapture("http://192 url /video")
 cap.set(3, 640)
 cap.set(4, 480)
 
