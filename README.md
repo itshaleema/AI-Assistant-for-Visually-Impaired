@@ -1,66 +1,73 @@
-# AI-Assistant-for-Visually-Impaired
-#Haleema Iftikhar
-Contact: haleema4work@gmail.com
-🔍Summary: Real-Time Object and Emotion Detection System for Assistive Vision Applications
-Author: Haleema Iftikhar
-Project Title: Real-Time Visual Perception System for Visually Impaired Users Using Deep Learning and On-Device Audio Feedback
-Technologies: OpenCV, ONNX Runtime, pyttsx3, MobileNet-SSD, FER+, Haar cascades
-Objectives:
-1) Detect and classify everyday objects in the user’s environment.
+# Real-Time Object and Emotion Detection System for Assistive Vision Applications
+### 👩‍💻 Author: Haleema Iftikhar  
+📧 **Contact:** haleema4work@gmail.com  
 
-2)Estimate the direction and relative distance of detected objects.
+---
 
-3)Recognize human emotions based on facial expressions.
+## 🔍 Summary
+**Project Title:** *Real-Time Visual Perception System for Visually Impaired Users Using Deep Learning and On-Device Audio Feedback*  
+**Technologies Used:** OpenCV, ONNX Runtime, pyttsx3, MobileNet-SSD, FER+, Haar Cascades  
 
-4)Provide natural language feedback through real-time text-to-speech (TTS).
+---
 
-5)Operate in real time and requires minimal compute resources.
-System Architecture & Methodology:
-•	Object Detection:
-The system uses a pre-trained MobileNet-SSD model trained on the COCO dataset to detect 80 common object classes. Detected objects are analyzed based on bounding box geometry to infer:
-Direction (left, center, right) based on x-coordinate center
-Distance (very close, medium, far) based on bounding box height
-•	Face & Emotion Detection:
-When a "person" is detected, the system performs:
-Face localization using Haar cascades
-Grayscale normalization and resizing to 64×64 resolution
+## 🎯 Objectives
+1. Detect and classify everyday objects in the user’s environment  
+2. Estimate the **direction** and **relative distance** of detected objects  
+3. Recognize **human emotions** based on facial expressions  
+4. Provide **natural language feedback** using real-time text-to-speech (TTS)  
+5. Operate in **real time** with minimal compute resources  
 
-Inference using the FER+ ONNX model for 8 emotion categories:
-['neutral','happiness','surprise','sadness','anger','disgust','fear','contempt']
-Emotion is only reported if its confidence probability exceeds a defined threshold (default: 40%).
-•	Speech Output:
-Pyttsx3 is used for text-to-speech conversion. Spoken messages are throttled using a temporal buffer to avoid information overload.
-Features:
-📦 Object Localization with verbal direction & proximity
+---
 
-😊 Emotion Recognition for social awareness
+## 🛠 System Architecture & Methodology
 
-🧠 ONNX Inference for hardware-efficient deep learning
+### • Object Detection
+- Uses **MobileNet-SSD** trained on the COCO dataset (80 object classes)
+- Computes:
+  - **Direction**: left, center, right (based on x-center of bounding box)
+  - **Distance**: very close, medium, far (based on bounding box height)
 
-🔊 Voice Feedback to aid non-visual navigation
+### • Face & Emotion Detection
+- Triggered when a `"person"` is detected
+- Pipeline:
+  - Face localized using **Haar Cascades**
+  - Grayscale normalized and resized to **64×64**
+  - Inference via **FER+ ONNX** model
+- Supported emotion categories:
+  - `['neutral', 'happiness', 'surprise', 'sadness', 'anger', 'disgust', 'fear', 'contempt']`
+- Emotion is only reported if confidence > **40%**
 
-⚡ Real-Time Performance on CPU-only systems
+### • Speech Output
+- Uses **pyttsx3** for offline TTS
+- Voice feedback is throttled to avoid cognitive overload
 
-Applications:
-•	Assistive technology for blind or low-vision individuals
+---
 
-•	Human–robot interaction systems requiring emotion understanding
+## 🌟 Key Features
+- 📦 **Object Localization** with verbal direction & proximity
+- 😊 **Emotion Recognition** for social interaction
+- 🧠 **ONNX Runtime** for efficient on-device inference
+- 🔊 **Real-Time Voice Feedback** for non-visual navigation
+- ⚡ Runs efficiently on **CPU-only systems**
 
-•	Context-aware wearable devices
+---
 
-•	Ambient intelligence in smart home or public environments
+## 🧩 Applications
+- Assistive tech for **blind or visually impaired users**
+- Emotion-aware **human–robot interaction**
+- **Smart wearable devices** with contextual awareness
+- **Ambient intelligence** in smart homes or public spaces
 
-Limitations & Future Improvements:
-•	Emotion recognition is limited by FER+ model accuracy and lighting conditions.
+---
 
-•	The current system supports a single-face emotion analysis.
+## ⚠️ Limitations & Future Work
+- Emotion recognition depends on FER+ accuracy and lighting
+- Currently supports **only one face** at a time
+- Future enhancements:
+  - 🌐 **Multilingual TTS**
+  - 🕹️ **Gesture or action recognition**
+  - 🧭 **GPS or haptic feedback integration**
+  - 👓 Support for **depth sensors** (IR/stereo vision)
 
-•	Future versions may include:
-
-•	Multilingual speech support
-
-•	Depth estimation via stereo or IR
-
-•	Gesture or action recognition
-
-•	Integration with GPS or haptic feedback
+---
+Thank you!!
